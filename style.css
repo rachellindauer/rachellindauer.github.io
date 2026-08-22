@@ -1,0 +1,119 @@
+/* ============================================================
+   Rachel's site — one small stylesheet, no framework.
+   The variables below control the whole look. Change a color
+   here and it changes everywhere.
+   ============================================================ */
+
+:root {
+  --bg: #faf9f7;          /* page background: warm off-white */
+  --text: #2a2723;        /* main text: soft near-black */
+  --muted: #6f6a62;       /* quieter text */
+  --accent: #b4552d;      /* links: warm terracotta */
+  --rule: #e6e2db;        /* thin divider lines */
+  --max-width: 40rem;     /* how wide the text column gets */
+}
+
+/* Respect the reader's dark mode. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1c1a18;
+    --text: #e8e4de;
+    --muted: #a39d93;
+    --accent: #e08a5c;
+    --rule: #35312c;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.125rem;
+  line-height: 1.65;
+  padding: 4rem 1.5rem 6rem;
+}
+
+main, footer {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: normal;
+  margin-bottom: 1.25rem;
+}
+
+h2 {
+  font-size: 1.05rem;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+section {
+  margin-bottom: 3.5rem;
+}
+
+section + section {
+  border-top: 1px solid var(--rule);
+  padding-top: 3rem;
+}
+
+p + p {
+  margin-top: 1rem;
+}
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+.quiet {
+  color: var(--muted);
+}
+
+.soon {
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* Lists of projects / links, without bullet dots. */
+ul.items, ul.links {
+  list-style: none;
+}
+
+ul.items li {
+  margin-bottom: 1.5rem;
+}
+
+ul.items p {
+  margin-top: 0.25rem;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+ul.links li {
+  display: inline-block;
+  margin-right: 1.5rem;
+}
+
+footer {
+  margin-top: 2rem;
+  border-top: 1px solid var(--rule);
+  padding-top: 1.5rem;
+  font-size: 0.9rem;
+}
