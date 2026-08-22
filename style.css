@@ -111,6 +111,21 @@ ul.links li {
   margin-right: 1.5rem;
 }
 
+/* The ranking list keeps its numbers — it IS a ranking. */
+ol.ranking {
+  padding-left: 1.5rem;
+}
+
+ol.ranking li {
+  margin-bottom: 1.5rem;
+}
+
+ol.ranking p {
+  margin-top: 0.25rem;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
 footer {
   margin-top: 2rem;
   border-top: 1px solid var(--rule);
