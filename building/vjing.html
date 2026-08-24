@@ -42,6 +42,25 @@
       <h2>Log</h2>
       <ul class="items">
         <li>
+          <strong>Aug 24</strong>
+          <p>The face moves now. Every cell grows out from a single point, and
+          the wall you see is the exact halfway line between two neighbouring
+          points, which is the reason nothing in this can ever curve. I gave
+          every point a second home, so the whole field travels back and forth
+          between an even scatter and the face, and the face only exists for an
+          instant at the turnaround. Making that feel alive took three goes. My
+          first version happened in a burst and then sat frozen, because I had
+          smoothed the timing twice over without noticing, once across the whole
+          field and again inside every single point. The fix was letting each
+          point take its own slow trip and ordering the queue by distance out
+          from the middle of the face, so the thing creeps outward with a ragged
+          edge instead of arriving all at once. After that I broke up the last
+          of the machine-made look, since the cells had been landing at
+          perfectly even spacing and reading like a grid. The eyes are now the
+          background of <a href="../index.html">my homepage</a>, gathering and
+          dissolving behind the words while you read.</p>
+        </li>
+        <li>
           <strong>Aug 23</strong>
           <p>Spent a long session chasing the face effect. The field stays
           pure abstraction most of the time, then the cells flash together

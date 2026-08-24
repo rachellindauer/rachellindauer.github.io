@@ -39,6 +39,16 @@ body {
   padding: 4rem 1.5rem 6rem;
 }
 
+/* The homepage carries the eyes in its background, so its content starts
+   below them and stops sitting on top. Measured rather than eyeballed: the eyes
+   are anchored 24% down the viewport, and because they scale with viewport
+   WIDTH they reach furthest down on wide short windows, ending around 43% of
+   the height there. 46vh clears that everywhere, with a rem floor so a very
+   short window still gets sane spacing. Only this page needs it. */
+body.home {
+  padding-top: max(7rem, 46vh);
+}
+
 main, footer {
   max-width: var(--max-width);
   margin: 0 auto;
