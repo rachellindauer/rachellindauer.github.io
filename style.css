@@ -45,6 +45,22 @@ body {
    WIDTH they reach furthest down on wide short windows, ending around 43% of
    the height there. 46vh clears that everywhere, with a rem floor so a very
    short window still gets sane spacing. Only this page needs it. */
+/* Names the background right where it is happening, in the quiet band above
+   the eyes. Positioned absolutely so it can sit up there without disturbing the
+   measured clearance below that keeps the content clear of the eyes. It scrolls
+   away with the page rather than sticking. */
+.bg-note {
+  position: absolute;
+  top: 1.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(var(--max-width), calc(100% - 3rem));
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
 body.home {
   padding-top: max(7rem, 46vh);
 }
