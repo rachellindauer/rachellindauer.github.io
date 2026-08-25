@@ -333,3 +333,30 @@ footer {
     margin-top: 2rem;
   }
 }
+
+/* ============================================================
+   MOTION
+   Sections rise into place as you reach them. See motion.js for the two
+   rules behind it. The important one lives in the selector below: the
+   hidden state is locked behind html.js-motion, a class only that script
+   adds. No script, nothing hidden, page renders in full.
+
+   The whole block also sits inside a reduced-motion query, so a visitor
+   whose system asks for less movement never has anything hidden from them
+   in the first place.
+   ============================================================ */
+@media (prefers-reduced-motion: no-preference) {
+
+  html.js-motion .reveal {
+    opacity: 0;
+    transform: translateY(0.9rem);
+  }
+
+  /* The transition lives on the arriving state rather than the hidden one,
+     so the section eases in and never eases back out. */
+  html.js-motion .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: opacity 0.65s ease-out, transform 0.65s ease-out;
+  }
+}
