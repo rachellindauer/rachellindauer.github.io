@@ -89,6 +89,56 @@ section {
   margin-bottom: 3.5rem;
 }
 
+/* A piece is one visual inside the VJ project. Its title sits between the
+   page title and the small section labels. */
+h3 {
+  font-size: 1.35rem;
+  font-weight: normal;
+  margin-bottom: 0.6rem;
+}
+
+/* Column labels inside a piece. Same quiet uppercase as the section labels,
+   a size down so the hierarchy still reads. */
+h4 {
+  font-size: 0.8rem;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 0.9rem;
+}
+
+.piece + .piece {
+  border-top: 1px solid var(--rule);
+  padding-top: 2.5rem;
+  margin-top: 2.5rem;
+}
+
+/* Versions beside the log. The prose above stays at a comfortable reading
+   measure, so this block breaks out wider than the column it sits in rather
+   than squeezing two columns into 40rem. Collapses to one column when there
+   is not room, which is most phones. */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  width: min(62rem, calc(100vw - 3rem));
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 1.75rem;
+}
+
+@media (max-width: 48rem) {
+  .two-col {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+    width: 100%;
+    left: 0;
+    transform: none;
+  }
+}
+
 section + section {
   border-top: 1px solid var(--rule);
   padding-top: 3rem;
