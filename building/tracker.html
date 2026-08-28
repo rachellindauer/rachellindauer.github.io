@@ -16,9 +16,10 @@
 
       <h2>Why</h2>
       <p>
-        I wanted to run a part of my life a little more meticulously than I
-        have in the past. Also thought it was a cool way to see what I can
-        build. Very bare bones.
+        I wanted to find out whether I could build something I would actually
+        use. Not a demo. A thing I open every day and would be annoyed by if
+        it were bad. It tracks a process I had to run carefully anyway, so the
+        build had a real user with real opinions, and that user was me.
       </p>
 
       <h2>What</h2>
@@ -28,9 +29,45 @@
         lives in one JSON file on my machine; nothing touches a server.
       </p>
       <p>
-        Built by directing AI development tools rather than writing the code
-        by hand, which is how I build everything.
+        I build by directing AI development tools. What makes that work is
+        understanding the system well enough to debug it, make the
+        architecture calls, and know when what comes back is wrong.
       </p>
+
+      <h2>Decisions</h2>
+      <ul class="items">
+        <li>
+          <strong>Local-first, no server</strong>
+          <p>One JSON file plus a folder of uploads. For a tool with one user
+          holding their own private data, a backend would have been cost, a
+          security surface, and something else to maintain, in exchange for
+          nothing I needed. Backing it up means copying a folder.</p>
+        </li>
+        <li>
+          <strong>No API, on purpose</strong>
+          <p>The obvious build wires the app straight into an AI API. I decided
+          against it. The app assembles the prompt, I run it myself, and I paste
+          the result back. Same model, same quality, no key to manage and no
+          billing to watch on a personal project. A few seconds of copying is
+          the whole cost. I would build it the other way for a team, and for
+          one person it was the wrong trade.</p>
+        </li>
+        <li>
+          <strong>Scores expire when the criteria change</strong>
+          <p>The idea I care about most here. Everything gets a fit score, but
+          a score is only as good as the criteria it was judged against. So the
+          app remembers what the criteria were when each score was written, and
+          when I change what I am looking for, every score judged under the old
+          ones is flagged stale and can be redone in a batch. Without that, old
+          numbers sit there looking current and quietly lie to me.</p>
+        </li>
+        <li>
+          <strong>Nothing scores itself</strong>
+          <p>Re-scoring is a button. It never runs on save. I wanted the
+          machine's judgment to be something I asked for, not something that
+          turned up while I was busy and got mistaken for my own.</p>
+        </li>
+      </ul>
     </section>
 
     <section>
@@ -46,11 +83,7 @@
         <li>
           <strong>Aug 21</strong>
           <p>Added a Fit view: everything ranked by score, a movable
-          strong-fit threshold, and stale-score detection. The idea I care
-          about: a score is only as good as the criteria it was judged
-          against, so when my criteria change, old scores get flagged and
-          can be re-scored in one batch. Also: my first-ever hand-typed
-          <code>git push</code>.</p>
+          strong-fit threshold, and stale-score detection.</p>
         </li>
         <li>
           <strong>Jul 24</strong>
