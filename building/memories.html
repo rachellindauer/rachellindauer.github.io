@@ -42,99 +42,55 @@
         <li>
           <strong>Sep 9</strong>
           <p>
-            Started the public version tonight, and the first thing it did was
-            tell me I had been wrong about my own library since August.
+            Started the public version, and it told me I had the wrong number
+            written down since August. I had 2,007 recorded as too low. It was
+            right. The manifest says 2,063 because it counts saved copies
+            rather than memories, and 56 of mine were saved twice. Take off
+            the 16 videos Snapchat never delivered and you get the 1,991 I
+            actually received.
           </p>
           <p>
-            I had written down that the count in the Snapchat app, 2,007, was
-            wrong and dangerously low, and that the number to verify against
-            was 2,047. That was backwards. 2,007 was right the whole time.
-            Snapchat's manifest says 2,063 because it holds one record per
-            saved copy rather than one per memory, and 56 of my memories were
-            saved twice. Take the 16 videos Snapchat never delivered off 2,007
-            and you get the 1,991 I actually received. Add the 56 second copies
-            and you get the 2,047 files in the download. Every number I had was
-            explainable, and I had picked the wrong one to trust.
+            The audit reads 356 KB of 5.02 GB, because a zip keeps its list of
+            contents at the end of the file rather than the start.
           </p>
           <p>
-            The checking reads 356 KB out of 5.02 GB. A zip keeps its list of
-            contents at the end of the file instead of the start, so every
-            filename, size and timestamp can be read off the last few hundred
-            kilobytes without unzipping a single photo. The real capture time
-            lives in that list too, which matters because Snapchat strips the
-            date out of the photos completely and the dates it writes into the
-            videos are not reliable.
+            My duplicate checker was wrong three times and Apple Photos is
+            what caught it. I stopped reasoning about the zip and hashed all
+            1,991 finished files instead. 1,972 distinct pictures.
           </p>
           <p>
-            My duplicate checker was wrong three times before it was right, and
-            Apple Photos is what caught it. First I matched on Snapchat's ID,
-            which found 56. Photos then merged five more on import that I had
-            missed, because those five are the same picture saved under two
-            different IDs. So I matched on the file contents instead, which
-            found 27, and that was too many, because the same photo saved twice
-            with two different captions becomes two genuinely different
-            pictures. Folding the caption in gave 8, which still did not agree
-            with Photos. At that point I stopped reasoning about the zip and
-            hashed all 1,991 finished files directly. 1,972 distinct pictures,
-            18 duplicate groups, 19 redundant files.
-          </p>
-          <p>
-            The useful part is what that means the tool can honestly say. It
-            can prove two entries are identical from the index alone, and those
-            findings were all real, but it cannot catch every case without
-            decoding the pictures, because Snapchat sometimes stores the same
-            photo with different bytes and re-encoding flattens them to the
-            same result. So it reports a floor and says so, rather than a
-            number that sounds exact and is not.
-          </p>
-          <p>
-            My library is 1,972 now, it is in Photos, and I checked every date
-            by reading all 1,972 back out and comparing them. Photos converts
-            the world clock to my clock by itself, which I had not expected, so
-            a photo I took at 9pm shows up on the evening I took it instead of
-            the next morning. There is also a calendar file now, one all-day
-            event for each of the 341 days I have memories on, so the memories
-            come back to me without my having to go looking.
+            The library is 1,972 now and in Photos, every date checked. There
+            is a calendar file too, one day for each of the 341 days I have
+            memories on.
           </p>
         </li>
         <li>
           <strong>Aug 27</strong>
           <p>
-            The library was built on the 24th, the same night I got my full
-            data download. 2,047 files, every caption painted back on, every
-            date correct inside and out. When I picked it up tonight, I
-            realized I couldn't explain one thing that had happened. Claude
-            had built it and caught every trap, and I said, "Great, let's fix
-            it." This is the exact failure that I know in myself and that I
-            want to prevent, so tonight I made myself understand the three
-            things that are worth understanding.
+            The library was built on the 24th, and tonight I realized I could
+            not explain one thing that had happened. Claude built it, caught
+            every trap, and I said “Great, let’s fix it.” That is the exact
+            failure I know in myself, so I made myself learn the three things
+            worth knowing.
           </p>
           <p>
-            1. These videos were stored sideways, because the camera sensor
-            in a phone cannot turn. Portrait videos get saved in landscape
-            with a note that says to rotate it when you play it. Players obey
-            the note, which is why a general user never sees it. My captions
-            in Snapchat were made for the upright version, so they had to be
-            sized to the upright measurements. Using the files' raw landscape
-            measurements instead would have squashed and stretched the
-            caption on 80% of my videos, and no error would have fired,
-            because a mangled caption is still a perfectly valid video.
+            1. Phone videos are stored sideways, with a note saying to rotate
+            them on playback. My captions were made for the upright version,
+            so sizing them to the raw landscape measurements would have
+            squashed them on 80% of my videos, and no error would have fired,
+            because a mangled caption is still a valid video.
           </p>
           <p>
-            2. Snapchat's dates inside my videos were not correct. Their
-            servers reprocess the videos in batches and stamp each one with
-            the date it was reprocessed, not the date I filmed it. Three
-            videos from different days in fall 2017 all claimed the same
-            moment in January 2018, seconds apart. The real dates came from
-            two independent sources that agreed perfectly across all 2,047
-            files: the timestamp each file carries inside the zip, and
-            Snapchat's own manifest.
+            2. Snapchat’s dates inside my videos are the date the servers
+            reprocessed them, not the date I filmed. Three videos from
+            different days in fall 2017 all claimed the same moment in January
+            2018. The real dates came from the zip timestamps and Snapchat’s
+            manifest, which agreed across all 2,047 files.
           </p>
           <p>
-            3. A script that finishes with no errors means pretty much
-            nothing. A clean run can and will hand you squashed captions,
-            shortened videos, silent audio, and wrong dates. The only checks
-            that count come from outside, comparing what came out against
+            3. A script finishing with no errors means almost nothing. A clean
+            run will happily hand you squashed captions, silent audio and
+            wrong dates. The only checks that count compare the output against
             something the script never touched.
           </p>
         </li>
