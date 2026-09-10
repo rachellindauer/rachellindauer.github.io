@@ -40,6 +40,64 @@
       <h2>Log</h2>
       <ul class="items">
         <li>
+          <strong>Sep 9</strong>
+          <p>
+            Started the public version tonight, and the first thing it did was
+            tell me I had been wrong about my own library since August.
+          </p>
+          <p>
+            I had written down that the count in the Snapchat app, 2,007, was
+            wrong and dangerously low, and that the number to verify against
+            was 2,047. That was backwards. 2,007 was right the whole time.
+            Snapchat's manifest says 2,063 because it holds one record per
+            saved copy rather than one per memory, and 56 of my memories were
+            saved twice. Take the 16 videos Snapchat never delivered off 2,007
+            and you get the 1,991 I actually received. Add the 56 second copies
+            and you get the 2,047 files in the download. Every number I had was
+            explainable, and I had picked the wrong one to trust.
+          </p>
+          <p>
+            The checking reads 356 KB out of 5.02 GB. A zip keeps its list of
+            contents at the end of the file instead of the start, so every
+            filename, size and timestamp can be read off the last few hundred
+            kilobytes without unzipping a single photo. The real capture time
+            lives in that list too, which matters because Snapchat strips the
+            date out of the photos completely and the dates it writes into the
+            videos are not reliable.
+          </p>
+          <p>
+            My duplicate checker was wrong three times before it was right, and
+            Apple Photos is what caught it. First I matched on Snapchat's ID,
+            which found 56. Photos then merged five more on import that I had
+            missed, because those five are the same picture saved under two
+            different IDs. So I matched on the file contents instead, which
+            found 27, and that was too many, because the same photo saved twice
+            with two different captions becomes two genuinely different
+            pictures. Folding the caption in gave 8, which still did not agree
+            with Photos. At that point I stopped reasoning about the zip and
+            hashed all 1,991 finished files directly. 1,972 distinct pictures,
+            18 duplicate groups, 19 redundant files.
+          </p>
+          <p>
+            The useful part is what that means the tool can honestly say. It
+            can prove two entries are identical from the index alone, and those
+            findings were all real, but it cannot catch every case without
+            decoding the pictures, because Snapchat sometimes stores the same
+            photo with different bytes and re-encoding flattens them to the
+            same result. So it reports a floor and says so, rather than a
+            number that sounds exact and is not.
+          </p>
+          <p>
+            My library is 1,972 now, it is in Photos, and I checked every date
+            by reading all 1,972 back out and comparing them. Photos converts
+            the world clock to my clock by itself, which I had not expected, so
+            a photo I took at 9pm shows up on the evening I took it instead of
+            the next morning. There is also a calendar file now, one all-day
+            event for each of the 341 days I have memories on, so the memories
+            come back to me without my having to go looking.
+          </p>
+        </li>
+        <li>
           <strong>Aug 27</strong>
           <p>
             The library was built on the 24th, the same night I got my full
