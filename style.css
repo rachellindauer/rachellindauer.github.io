@@ -360,3 +360,10 @@ footer {
     transition: opacity 0.65s ease-out, transform 0.65s ease-out;
   }
 }
+
+/* Embedded video: a 16:9 box that shrinks with the column */
+.video iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}

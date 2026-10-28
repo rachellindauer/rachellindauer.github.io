@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fluentcy and Flecs — Rachel Lindauer</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <main>
+    <p><a href="../index.html">&larr; back</a></p>
+
+    <section>
+      <h1>Fluentcy and Flecs</h1>
+
+      <div class="video">
+        <iframe src="https://www.youtube-nocookie.com/embed/u7-ZPIIh-jg"
+          title="Fluentcy and Flecs demo"
+          allow="encrypted-media; picture-in-picture; fullscreen"
+          allowfullscreen></iframe>
+      </div>
+
+      <h2>Why</h2>
+      <p>
+        Influent didn&rsquo;t have an engineering team, so I became one.
+        Clients got their leads in a spreadsheet, and I wanted them to see who
+        their content was reaching. And I wanted our strategists to write from
+        what an executive had said, not from what an AI guessed they might say.
+      </p>
+
+      <h2>What</h2>
+      <p>
+        Fluentcy is the client portal, live since July 2026. Everyone who
+        engages with an executive&rsquo;s LinkedIn post gets scored against the
+        client&rsquo;s ideal customer, so a client can see which buyers each
+        post reached.
+      </p>
+      <p>
+        Flecs is what our strategists use to plan and draft posts. Each
+        executive gets their own brain, built from their interview transcripts
+        and how their past posts performed. The strategists use it from inside
+        Claude or ChatGPT, the assistants they already had open.
+      </p>
+
+      <h2>Decisions</h2>
+      <ul class="items">
+        <li>
+          <strong>No new app to learn</strong>
+          <p>I built Flecs as an MCP server instead of another website, so it
+          meets the team where they already work. Because MCP is an open
+          standard, adding ChatGPT took no code changes.</p>
+        </li>
+        <li>
+          <strong>Nothing grades its own homework</strong>
+          <p>A draft only ships if every claim traces back to something the
+          executive said, and a separate model checks that. Then I built a test
+          set to check the checker. It holds drafts that should fail and drafts
+          that should pass, because a gate that blocks everything is as broken
+          as one that blocks nothing.</p>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+</body>
+</html>
