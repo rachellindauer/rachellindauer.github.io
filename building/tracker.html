@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>A tracker app — Rachel Lindauer</title>
+  <title>A job tracker — Rachel Lindauer</title>
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -12,20 +12,21 @@
     <p><a href="../index.html">&larr; back</a></p>
 
     <section>
-      <h1>A tracker app</h1>
+      <h1>A job tracker</h1>
 
       <h2>Why</h2>
       <p>
         I wanted to find out whether I could build something I would actually
         use. A thing I open every day and would be annoyed by if it were bad.
-        It tracks a process I had to run carefully anyway, so the build had a
-        real user with real opinions, and that user was me.
+        It tracks my job search, which I had to run carefully anyway, so the
+        build had a real user with real opinions, and that user was me.
       </p>
 
       <h2>What</h2>
       <p>
-        A local-first web app. A pipeline board, AI-assisted intake with fit
-        scoring, and documents drafted from one maintained profile. Everything
+        A local-first web app. A board of applications, AI intake that scores
+        how well each role fits, and resumes and cover letters drafted from one
+        maintained profile. Everything
         lives in one JSON file on my machine, and nothing touches a server.
       </p>
 
@@ -55,9 +56,9 @@
         </li>
         <li>
           <strong>What is true and what to act on are two questions</strong>
-          <p>Items now count how long they have been quiet, and past a
-          threshold the app closes them for me. That rule is deliberately
-          narrow. It cannot touch something I never sent, it cannot touch one
+          <p>Applications now count how long they have been quiet, and past a
+          threshold the app marks them ghosted and closes them. That rule is deliberately
+          narrow. It cannot touch an application I never sent, it cannot touch one
           that finished well, and it skips anything I reopened by hand, because
           reopening is me saying I already know it is quiet and I want it left
           alone. The board still shows those as quiet, because they are. One
@@ -67,7 +68,7 @@
         </li>
         <li>
           <strong>Scores expire when the criteria change</strong>
-          <p>The idea I care about most here. Everything gets a fit score, but
+          <p>The idea I care about most here. Every job gets a fit score, but
           a score is only as good as the criteria it was judged against. So the
           app remembers what the criteria were when each score was written, and
           when I change what I am looking for, every score judged under the old
@@ -100,7 +101,7 @@
         <li>
           <strong>Sep 10</strong>
           <p>
-            A document I had been sending out for two weeks looked perfect to
+            The resume I had been sending out for two weeks looked perfect to
             me and was broken to any machine reading it. The export had quietly
             dropped the characters out of every ti and fl pair, so the words
             were misspelled everywhere except on screen. The generator checks
@@ -123,7 +124,7 @@
             only job was scraping replies for structured data.
           </p>
           <p>
-            The smaller thing taught me more. Items close themselves once they
+            The smaller thing taught me more. Applications close themselves once they
             have been quiet long enough, and my first version reset the clock
             whenever anything moved. Then I moved one back out of closed and
             it told me the wait had started today. Moving something back is me
@@ -134,19 +135,18 @@
         </li>
         <li>
           <strong>Aug 22</strong>
-          <p>Added tailored drafting. Each item's page now builds a prompt
-          from my master document, my profile, and that item's own source
-          text, and the result saves into the version library attached to
-          the item.</p>
+          <p>Added tailored drafting. Each job's page now builds a prompt
+          from my master resume, my profile, and that job's posting, and the
+          result saves into the version library attached to the job.</p>
         </li>
         <li>
           <strong>Aug 21</strong>
-          <p>Added a Fit view. Everything ranked by score, a movable
+          <p>Added a Fit view. Every job ranked by score, a movable
           strong-fit threshold, and stale-score detection.</p>
         </li>
         <li>
           <strong>Jul 24</strong>
-          <p>Started it. Pipeline board, profile, the basics.</p>
+          <p>Started it. Application board, profile, the basics.</p>
         </li>
       </ul>
     </section>
